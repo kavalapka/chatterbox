@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="app" lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Angular Chat App</title>
@@ -8,7 +8,7 @@
 
   <base href="/">
 </head>
-<body>
+<body ng-app="appChat">
 
 <div class="myflex">
 
@@ -17,51 +17,12 @@
             <h3>Chatterbox App</h3>
         </div>
     </nav>
-    <div class="container content">
+    <div id='c' class="container content" ng-controller="displayController as display">
         <div id="messages" class="messages">
             <ul>
-                <li>
-                    <span class="left">Bye</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="left">Hello</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="left">Are you there?</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="right">Yes I am here</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="left">Bye</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="left">Hello</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="left">Are you there?</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="right">Yes I am here</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="left">Thanks for accepting my friend request</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="right">You Welcome</span>
-                    <div class="clear"></div>
-                </li>
-                <li>
-                    <span class="left">Bye</span>
+                <li ng-repeat="msg in display.messages">
+                    <span ng-if="msg.user == display.me" class="right">{{msg.msg}}</span>
+                    <span ng-if="msg.user != display.me" class="left">{{msg.msg}}</span>
                     <div class="clear"></div>
                 </li>
             </ul>
@@ -69,7 +30,7 @@
         </div>
     </div>
 
-    <footer class="row-footer">
+    <footer class="row-footer" ng-controller="sendController as send">
         <div class="container">
             <div class="form">
                 <div>

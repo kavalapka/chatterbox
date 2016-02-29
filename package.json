@@ -38,6 +38,7 @@
     "html-webpack-plugin": "^2.7.1",
     "isparta-instrumenter-loader": "^1.0.0",
     "jasmine-core": "^2.3.4",
+    "jquery": "^2.2.1",
     "karma": "^0.13.14",
     "karma-coverage": "^0.5.3",
     "karma-jasmine": "^0.3.6",
