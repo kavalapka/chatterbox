@@ -28,9 +28,10 @@ html, body {
 
 .row-footer {
     width: 100%;
-  margin: 0px auto;
-  padding: 10px 20px 10px 10px;
-  background-color: #AfAfAf;
+    margin: 0px auto;
+    padding: 10px 20px 10px 10px;
+    background-color: white;
+    border-top: 1px solid rgb(45, 83, 118);
 }
 
 .glyphicon.glyphicon-send {
@@ -42,7 +43,7 @@ html, body {
 {
     padding: 5px;
     width: 100%;
-    background-color: rgba(225, 206, 0, 0.13);
+    background-color: white;
     overflow-y: scroll;
 }
 
@@ -88,7 +89,7 @@ html, body {
     width: 0px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-right: 8px solid white;
+    border-right: 9px solid white;
 }
 
 .messages ul li span.left:before
@@ -102,7 +103,7 @@ html, body {
     width: 0px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-right: 8px solid black;
+    border-right: 8px solid grey;
 }
 
 .messages ul li span.right:after
@@ -116,7 +117,7 @@ html, body {
     width: 0px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-left: 8px solid #dbedfe;
+    border-left: 9px solid #dbedfe;
 }
 
 .messages ul li span.right:before
@@ -130,7 +131,7 @@ html, body {
     width: 0px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-left: 8px solid black;
+    border-left: 8px solid grey;
 }
 
 .messages ul li span.right
@@ -158,7 +159,7 @@ html, body {
     display: inline-block;
     border: 0;
     resize: none;
-    font-size: 12px;
+    font-size: 16px;
     padding: 10px;
     overflow-y: scroll;
 }
