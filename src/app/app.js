@@ -8,8 +8,8 @@ import display_style from './displayBox/display.style.css';
 
 
 angular.module('appChat', [])
-    .controller('sendController', sendController)
-    .service('sendService', sendService)
+    .controller('sendController', ['$scope', 'sendService', sendController])
+    .service('sendService', ['$http', sendService])
     .controller('displayController', ['$scope', '$interval', 'displayService', displayController])
     .service('displayService', ['$http', displayService])
 ;
