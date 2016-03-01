@@ -106,6 +106,14 @@ html, body {
     border-right: 8px solid grey;
 }
 
+.messages ul li div.time-left
+{
+    float: left;
+    color: grey;
+    font-size: 12px;
+    padding: 5px;
+}
+
 .messages ul li span.right:after
 {
     content: "";
@@ -143,6 +151,14 @@ html, body {
 .clear
 {
     clear: both;
+}
+
+.messages ul li div.time-right
+{
+    float: right;
+    color: grey;
+    font-size: 12px;
+    padding: 5px;
 }
 
 .input-box

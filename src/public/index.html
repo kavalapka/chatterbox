@@ -21,10 +21,14 @@
         <div id="messages" class="messages">
             <ul>
                 <li ng-repeat="msg in display.messages">
-
-                    <span ng-if="msg.user == display.me" class="right">{{msg.msg}}</span>
-                    <div style="float: right;" >{{msg.timestamp}}</div>
-                    <span ng-if="msg.user != display.me" class="left">{{msg.msg}}</span>
+                    <div ng-if="msg.user == display.me">
+                        <span  class="right">{{msg.msg}}</span>
+                        <div class="time-right">{{msg.timestamp}}</div>
+                    </div>
+                    <div ng-if="msg.user != display.me">
+                        <span  class="left">{{msg.msg}}</span>
+                        <div class="time-left">{{msg.timestamp}}</div>
+                    </div>
                     <div class="clear"></div>
                 </li>
             </ul>
