@@ -21,7 +21,9 @@
         <div id="messages" class="messages">
             <ul>
                 <li ng-repeat="msg in display.messages">
+
                     <span ng-if="msg.user == display.me" class="right">{{msg.msg}}</span>
+                    <div style="float: right;" >{{msg.timestamp}}</div>
                     <span ng-if="msg.user != display.me" class="left">{{msg.msg}}</span>
                     <div class="clear"></div>
                 </li>
@@ -34,15 +36,16 @@
         <div class="container">
             <div class="form">
                 <div>
-                <div class="col-xs-10 input-box">
-                    <textarea placeholder="Enter message"></textarea>
-                </div>
-                    <a class="col-xs-2 btn"><i class="glyphicon glyphicon-send"></i></a>
+                    <div class="col-xs-10 input-box">
+                        <textarea ng-model="send.msg" placeholder="Enter message"></textarea>
+                    </div>
+                        <a class="col-xs-2 btn">
+                            <i class="glyphicon glyphicon-send" ng-click="send.transmitMessage(send.msg)"></i></a>
                 </div>
             </div>
         </div>
     </footer>
+</div>
 
-   </div>
 </body>
 </html>
