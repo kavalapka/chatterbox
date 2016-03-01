@@ -8,35 +8,36 @@ import moment from 'moment';
 export default function displayController($scope, $interval, displayService) {
     var vm = this;
 
+    ///api/message/list?timestamp=1456651674675
+
     vm.me = "Olga";
     vm.messages = [];
+    var lastTS = '';
 
     var msgElem = document.getElementById('messages');
 
     function displayMsg() {
-        displayService.getMessages().then(prepateToDisplay, errorCallback);
+        displayService.getMessages(lastTS).then(prepareToDisplay, errorCallback);
     }
-    $interval(displayMsg, 1000, 1);
+    $interval(displayMsg, 1000, 3);
 
-    function prepateToDisplay(response){
-        var arr = (response.data).map(function(msg){
+    function prepareToDisplay(response){
+        var respData = response.data;
+        lastTS = respData[respData.length-1].timestamp;
+
+        var arr = respData.map(function(msg){
             msg.timestamp  = moment(msg.timestamp).format('HH:mm');
             return msg;
         });
         vm.messages = vm.messages.concat(arr);
 
         console.log('mess', vm.messages);
-        //vm.getMsgTime(vm.messages[0].timestamp)
         setTimeout(function() {msgElem.scrollTop = msgElem.scrollHeight+500;}, 10);
     }
 
     function errorCallback(response){
+        //lastTS = new Date().getTime();
         return "Error: " + response.status + " " + response.statusText;
     }
 
-    vm.getMsgTime = function(msg){
-        msg.timestamp  = moment(msg.timestamp).format('HH:mm');
-        //console.log('time', msgTime);
-        return msg;
-    }
 }

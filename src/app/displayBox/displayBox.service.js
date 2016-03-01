@@ -3,9 +3,11 @@
  */
 
 export default function displayService($http) {
-    var baseUrl = 'http://localhost:3000/db';
+    //var baseUrl = 'http://localhost:3000/db';
+    var baseUrl = 'http://fathomless-everglades-3680.herokuapp.com/api/message/list?timestamp=';
 
-    this.getMessages = function(){
-        return $http.get(baseUrl)
+    this.getMessages = function(timestamp){
+        console.log('get_url:' + baseUrl+timestamp);
+        return $http.get(baseUrl+timestamp)
     }
 }
