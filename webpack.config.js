@@ -28,7 +28,7 @@ module.exports = function makeWebpackConfig () {
    * Karma will set this when it's a test build
    */
   config.entry = ENV === 'test' ? {} : {
-    app: './src/app/app.js'
+      app: './src/app/app.js',
   };
 
   /**
@@ -39,19 +39,19 @@ module.exports = function makeWebpackConfig () {
    */
   config.output = ENV === 'test' ? {} : {
     // Absolute output directory
-    path: __dirname + '/dist',
+    path: __dirname + '/dist/resource',
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
-    publicPath: ENV === 'build' ? '/' : 'http://localhost:8080/',
+    publicPath: ENV === 'build' ? '/chatterbox/resource/' : 'http://localhost:8080/',
 
     // Filename for entry points
     // Only adds hash in build mode
-    filename: ENV === 'build' ? '[name].[hash].js' : '[name].bundle.js',
+    filename: ENV === 'build' ? 'bundle.js' : 'bundle.js',
 
     // Filename for non-entry points
     // Only adds hash in build mode
-    chunkFilename: ENV === 'build' ? '[name].[hash].js' : '[name].bundle.js'
+    chunkFilename: ENV === 'build' ? 'bundle.js' : '[name].bundle.js'
   };
 
   /**
@@ -185,7 +185,7 @@ module.exports = function makeWebpackConfig () {
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
-        from: __dirname + '/src/public'
+          from: __dirname + '/src/public',
       }])
     )
   }
