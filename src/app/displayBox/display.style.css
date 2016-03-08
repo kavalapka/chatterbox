@@ -65,12 +65,12 @@ html, body {
 .messages ul li span
 {
     display: inline-block;
-    max-width: 200px;
-    background-color: white;
+    max-width: 96%;
+    min-width: 96%;
+    background-color: rgba(232, 237, 243, 0.65);
     padding: 5px;
     border-radius: 8px;
     position: relative;
-    border: 1px solid grey;
 }
 
 .messages ul li span.left
@@ -89,7 +89,7 @@ html, body {
     width: 0px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-right: 9px solid white;
+    border-right: 9px solid rgba(232, 237, 243, 0.65);
 }
 
 .messages ul li span.left:before
@@ -103,7 +103,6 @@ html, body {
     width: 0px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-right: 8px solid grey;
 }
 
 .messages ul li div.time-left
@@ -125,7 +124,7 @@ html, body {
     width: 0px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-left: 9px solid #dbedfe;
+    border-left: 9px solid rgb(219, 243, 255);
 }
 
 .messages ul li span.right:before
@@ -139,13 +138,13 @@ html, body {
     width: 0px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-left: 8px solid grey;
+  //  border-left: 8px solid grey;
 }
 
 .messages ul li span.right
 {
     float: right;
-    background-color: #dbedfe;
+    background-color: rgb(219, 243, 255);
 }
 
 .clear
