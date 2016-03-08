@@ -5,7 +5,7 @@
 import qs from 'qs';
 
 export default function sendService($http) {
-    var baseUrl = 'http://localhost:3001/api/message/send?';
+    var baseUrl = 'http://am1.9-project.com:2201/api/message/send?';
     //var baseUrl = 'http://fathomless-everglades-3680.herokuapp.com/api/message/send?';
            // '/api/message/send?timestamp=1456651674675&msg=Hi%20all&user=Vasya'
     this.sendMessage = function(partUrlDict){
