@@ -10,7 +10,7 @@ export default function sendController($scope, sendService) {
     var params = {
         timestamp: '',
         msg: '',
-        user: 'Vasya'
+        user: 'Olga'
     };
     vm.msg = '';
 
@@ -18,7 +18,9 @@ export default function sendController($scope, sendService) {
         params.timestamp = new Date().getTime();
         params.msg = message;
         console.log('obj_to_send:', params);
-        sendService.sendMessage(params).then(successCallback, errorCallback);
+        if(params.msg.length > 0) {
+            sendService.sendMessage(params).then(successCallback, errorCallback);
+        }
 
         vm.msg = '';
     };
