@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Chat App</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <base href="/">
+<link href="/chatterbox/resource/app.9f47e52b6c731fd7b149.css" rel="stylesheet"></head>
+<body ng-app="appChat">
+
+<div class="myflex">
+
+    <nav class="navbar navbar-fixed-top">
+        <div>
+            <h3>Chatterbox App</h3>
+        </div>
+    </nav>
+    <div id='c' class="container content" ng-controller="displayController as display">
+        <div id="messages" class="messages">
+            <ul>
+                <li ng-repeat="msg in display.messages">
+                    <div ng-if="msg.user == display.me">
+                        <span  class="right">{{msg.msg}}</span>
+                        <div class="time-right">{{msg.timestamp}}</div>
+                    </div>
+                    <div ng-if="msg.user != display.me">
+                        <span  class="left">{{msg.msg}}</span>
+                        <div class="time-left">{{msg.timestamp}}</div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <footer class="row-footer" ng-controller="sendController as send">
+        <div class="container">
+            <div class="form">
+                <div>
+                    <div class="col-xs-10 input-box">
+                        <textarea ng-model="send.msg" placeholder="Enter message"></textarea>
+                    </div>
+                        <a class="col-xs-2 btn">
+                            <i class="glyphicon glyphicon-send" ng-click="send.transmitMessage(send.msg)"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="/chatterbox/resource/bundle.js"></script></body>
+</html>
