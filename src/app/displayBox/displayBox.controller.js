@@ -23,9 +23,11 @@ export default function displayController($scope, $interval, displayService) {
 
     function prepareToDisplay(response){
         var respData = response.data;
-        if(respData[respData.length-1]){
-            lastTS = respData[respData.length-1].timestamp;
-        }
+        if(respData.length === 0) {
+            return
+        };
+
+        lastTS = respData[respData.length-1].timestamp;
 
         var arr = respData.map(function(msg){
             msg.timestamp  = moment(msg.timestamp).format('HH:mm');
